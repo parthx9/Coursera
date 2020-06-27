@@ -35,9 +35,60 @@
                 <li class="nav-item"><a class="nav-link" href=""><span class="fa fa-list fa-lg"></span> MENU</a></li>
                 <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-home fa-address-card fa-lg"></span> CONTACT</a></li>
             </ul>
+            <span class="navbar-text">
+                <a data-target="#loginModal" data-toggle="modal">
+                    <span class="fa fa-sign-in"></span> Login
+                </a>
+            </span>
         </div>
         </div>
     </nav>
+
+    <div id="loginModal" class="modal" role="dailog">
+        <div class="modal-dailog" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form form-group">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="col-form-label" for="emailid">Email ID</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="emailid" id="emailid">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="col-form-label" for="password">Password</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                                    <label for="remember" class="form-check-label">Remember Me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button class="btn btn-secondary btn-sm ml-1" type="button" data-dismiss="modal">Cancel</button>
+                            <button class="btn-primary btn btn-sm ml-1" type="submit">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header align-items-center">
@@ -50,7 +101,7 @@
                 </div>
                 <div class="col-sm col-12 align-items-center">
                     <button class="orange btn btn-primary align-self-center">
-                    <a href="#reservemenu" class="text-white">Reserve</a> 
+                    <a href="#reservemenu" class="text-white" data-toggle="tooltip" data-html="true" title="Or Call us at <br> +91-9013333333" data-placement="bottom">Reserve</a> 
                     </button>
                 </div>
             </div>
@@ -214,6 +265,11 @@
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
 </body>
 
 </html>
